@@ -5,15 +5,15 @@ Finapps Bluemobile team
 
 API description:
 
-1. Hit 
+### Step 1. Hit 
 
-* For Sender:
+  * For Sender:
 
         /send?lat=1&lon=1.5&name=sdafs&lastname=sdfsf&accn=345345&amount=123.4
 
         {"success":true,"data":{"name":"sdafs","lastName":"sdfsf","loc":{"latitude":1.0,"longitude":1.5},"ts":1351035531840,"acccount":null},"operationId":1351035531492}
 
-* For Receiver:
+  * For Receiver:
 
         /receive?lat=1&lon=1.5&name=sdafs&lastname=sdfsf&accn=34234234
 
@@ -23,15 +23,15 @@ On error:
 
     {"success":false,"data":null,"operationId":0}
 
-2. Confirm operation:
+### Step 2. Confirm operation:
 
-* For Receiver:
+  * For Receiver:
 
         /accept/receive?idop=1351035531492 (idop is the operationId returned in the previous step)
 
         {"success":true,"data":{"name":"sdafs","lastName":"sdfsf","loc":{"latitude":1.0,"longitude":1.5},"ts":1351035531492,"amount":123.4,"acccount":"345345"},"operationId":1351035531492}
 
-* For Sender:
+  * For Sender:
   
         /accept/send?idop=1351035531492
 
